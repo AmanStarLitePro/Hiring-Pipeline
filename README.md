@@ -119,13 +119,13 @@ The backend exposes endpoints such as:
 
 ### Backend
 
-- Python 3.10
+- Python
 - FastAPI
 - Cassandra
 - FAISS
 - LangChain
 - Groq
-- Docker Compose
+- Docker
 
 ## Prerequisites
 
