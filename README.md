@@ -147,6 +147,8 @@ Create a `.env` file in the backend project root (`backend/.env`) with values li
 CASSANDRA_HOST=localhost
 CASSANDRA_PORT=9042
 CASSANDRA_KEYSPACE=mini_hiring_pipeline
+CASSANDRA_USERNAME=Username
+CASSANDRA_PASSWORD=Password
 PORT=8000
 WORKERS=2
 ENVIRONMENT=development
