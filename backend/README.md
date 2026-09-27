@@ -114,7 +114,6 @@ PORT=8000
 WORKERS=2
 ENVIRONMENT=development
 GROQ_API_KEY=groq_api_key
-HF_TOKEN=hugging_face_api_key
 ```
 
 Notes:
