@@ -1,3 +1,5 @@
+// search.js
+
 import Link from "next/link";
 import { useState } from "react";
 import CandidateCard from "../components/CandidateCard";
@@ -11,20 +13,29 @@ export default function SearchPage() {
   const [error, setError] = useState("");
 
   async function handleSearch(nextQuery) {
-  setQuery(nextQuery);
-  setLoading(true);
-  setError("");
-  try {
-    const data = await searchCandidates(nextQuery);
-    setResults(Array.isArray(data) ? data : []);
-  } catch (requestError) {
-    setError(requestError.message || "Search failed. Please try again.");
-    setResults([]);
-  } finally {
-    setLoading(false);
-  }
-}
+    setQuery(nextQuery);
+    setLoading(true);
+    setError("");
+    try {
+      const response = await searchCandidates(nextQuery);
+      
+      const records = Array.isArray(response)
+        ? response
+        : response?.records && Array.isArray(response.records)
+        ? response.records
+        : [];
 
+      setResults(records);
+    } catch (requestError) {
+      setError(requestError.message || "Search failed. Please try again.");
+      setResults([]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const hasReason = results.length > 0 && typeof results[0]?.reason === "string";
+  const reasonText = hasReason ? results[0].reason : null;
 
   return (
     <main className="page-shell">
@@ -64,9 +75,17 @@ export default function SearchPage() {
               <p className="eyebrow">Results for</p>
               <h2>&ldquo;{query}&rdquo;</h2>
             </div>
-            <span className="result-count">{results.length} matches</span>
+            <span className="result-count">
+              {hasReason ? "0 matches" : `${results.length} matches`}
+            </span>
           </div>
-          {results.length > 0 ? (
+
+          {hasReason ? (
+            <div className="empty-state">
+              <h3>No candidates matched your request</h3>
+              <p className="reason-text">{reasonText}</p>
+            </div>
+          ) : results.length > 0 ? (
             <div className="results-grid">
               {results.map((candidate, index) => (
                 <CandidateCard
