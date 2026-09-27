@@ -108,11 +108,13 @@ Create a `.env` file in the project root with values similar to:
 CASSANDRA_HOST=localhost
 CASSANDRA_PORT=9042
 CASSANDRA_KEYSPACE=mini_hiring_pipeline
+CASSANDRA_USERNAME=Username
+CASSANDRA_PASSWORD=Password
 PORT=8000
 WORKERS=2
 ENVIRONMENT=development
-GROQ_API_KEY=groq_api_key_here
-HF_KEY=hugging_face_key_here
+GROQ_API_KEY=groq_api_key
+HF_TOKEN=hugging_face_api_key
 ```
 
 Notes:
