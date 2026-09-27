@@ -1,0 +1,14 @@
+services:
+  hiring:
+    image: cassandra:5.0
+    container_name: hiring
+    ports:
+      - "9042:9042"
+    volumes:
+      - hiring_volume:/var/lib/cassandra
+    environment:
+      - CASSANDRA_START_RPC=true
+      - CASSANDRA_CLUSTER_NAME=hiring
+
+volumes:
+  hiring_volume:

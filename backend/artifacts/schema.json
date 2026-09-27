@@ -1,0 +1,43 @@
+{
+  "keyspace": "mini_hiring_pipeline",
+  "tables": {
+    "candidates": {
+      "description": "Stores basic candidate information and current stage",
+      "columns": {
+        "id": "UUID PRIMARY KEY",
+        "name": "TEXT",
+        "email": "TEXT",
+        "current_stage": "TEXT",
+        "created_at": "TIMESTAMP"
+      }
+    },
+    "stages": {
+      "description": "Tracks when a candidate entered each stage",
+      "columns": {
+        "candidate_id": "UUID",
+        "stage_name": "TEXT",
+        "entered_at": "TIMESTAMP"
+      },
+      "primary_key": ["candidate_id", "entered_at"]
+    },
+    "audit_log": {
+      "description": "Immutable log of all actions taken on a candidate",
+      "columns": {
+        "log_id": "UUID",
+        "candidate_id": "UUID",
+        "action": "TEXT",
+        "timestamp": "TIMESTAMP",
+        "metadata": "TEXT"
+      },
+      "primary_key": ["candidate_id", "log_id"]
+    }
+  },
+  "vector_index": {
+    "name": "faiss_candidates",
+    "description": "FAISS index for fuzzy name search",
+    "fields": {
+      "candidate_id": "UUID",
+      "embedding": "FLOAT[]"
+    }
+  }
+}

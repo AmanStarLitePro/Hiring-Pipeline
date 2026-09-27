@@ -1,0 +1,11 @@
+cassandra-driver
+fastapi
+uvicorn
+pydantic
+python-dotenv
+concurrent-log-handler
+faiss-cpu
+pandas
+numpy
+sentence-transformers
+langchain-groq
