@@ -16,7 +16,7 @@ A candidate may also be rejected at any point before being hired. The app helps 
 - open a candidate and review their complete audit trail and time-in-stage history
 - search for candidates using natural-language queries
 
-## What the recruiter needs
+## Expected Project Outcome:
 
 ### Managing the pipeline
 
@@ -149,7 +149,8 @@ CASSANDRA_KEYSPACE=mini_hiring_pipeline
 PORT=8000
 WORKERS=2
 ENVIRONMENT=development
-GROQ_API_KEY=your_groq_api_key_here
+GROQ_API_KEY=groq_api_key_here
+HF_TOKEN=hugging_face_token
 ```
 
 For the frontend, configure the backend URL when starting the dev server:
