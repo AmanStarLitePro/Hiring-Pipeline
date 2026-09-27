@@ -137,6 +137,7 @@ Before running the project, ensure you have:
 - pip
 - Docker Desktop or Docker Engine
 - a valid Groq API key for semantic search
+- a valid Hugging Face API key for index based similarity search
 
 ## Environment Variables
 
@@ -149,8 +150,8 @@ CASSANDRA_KEYSPACE=mini_hiring_pipeline
 PORT=8000
 WORKERS=2
 ENVIRONMENT=development
-GROQ_API_KEY=groq_api_key_here
-HF_TOKEN=hugging_face_token
+GROQ_API_KEY=groq_api_key
+HF_TOKEN=hugging_face_api_key
 ```
 
 ## Running the Frontend
