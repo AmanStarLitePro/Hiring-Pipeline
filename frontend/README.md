@@ -116,7 +116,3 @@ The `next.config.js` rewrite forwards requests from `/api/backend/*` to the conf
 
 - If the backend is not running, the dashboard may show an error state.
 - The app is designed to work as a recruiter-facing pipeline dashboard for candidate management.
-
-## License
-
-This project is for educational or internal development use unless otherwise specified.
