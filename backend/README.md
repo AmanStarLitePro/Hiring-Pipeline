@@ -301,7 +301,3 @@ Run:
 ```bash
 python -m src.hiring_pipeline.pipelines.initialize_schema
 ```
-
-## License
-
-This project is intended for educational and internal use. Update the license as needed for production deployment.
