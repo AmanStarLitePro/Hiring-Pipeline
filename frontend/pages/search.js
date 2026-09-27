@@ -1,5 +1,3 @@
-// search.js
-
 import Link from "next/link";
 import { useState } from "react";
 import CandidateCard from "../components/CandidateCard";
