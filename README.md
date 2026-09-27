@@ -119,7 +119,7 @@ The backend exposes endpoints such as:
 
 ### Backend
 
-- Python
+- Python 3.10
 - FastAPI
 - Cassandra
 - FAISS
