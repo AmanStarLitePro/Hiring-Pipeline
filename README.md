@@ -284,7 +284,3 @@ AI tools were used to accelerate project scaffolding, API route design, and iter
 - The final approach favors fuzzy/semantic matching and ranking so that the strongest matches are surfaced first, and poor queries still return a meaningful explanation rather than an empty result.
 
 This was an important design correction, because the problem is not only "searching for a string", but understanding the recruiter’s intent in a hiring workflow.
-
-## License
-
-This project is intended for educational and internal use unless otherwise specified. Update the license as needed for production or external distribution.
