@@ -153,13 +153,6 @@ GROQ_API_KEY=groq_api_key_here
 HF_TOKEN=hugging_face_token
 ```
 
-For the frontend, configure the backend URL when starting the dev server:
-
-```bash
-cd frontend
-BACKEND_URL=http://127.0.0.1:8000 npm run dev
-```
-
 ## Running the Frontend
 
 From the repo root:
@@ -174,14 +167,6 @@ Open the app in the browser:
 
 ```text
 http://localhost:3000
-```
-
-Production build:
-
-```bash
-cd frontend
-npm run build
-npm run start
 ```
 
 ## Running the Backend
@@ -201,7 +186,7 @@ docker-compose up -d
 2. Create and activate a virtual environment:
 
 ```bash
-python -m venv .venv
+py -3.10 -m venv .venv
 # Windows
 .venv\Scripts\activate
 # Linux/macOS
